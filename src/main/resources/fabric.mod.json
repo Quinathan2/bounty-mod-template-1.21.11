@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "bounty-mod",
+	"version": "${version}",
+	"name": "bounty mod",
+	"description": "Bounty mod for servers",
+	"authors": [
+		"Quinathan"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/bounty-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.quin.bountyfile.BountyMod"
+		],
+		"fabric-datagen": [
+			"net.quin.bountyfile.BountyModDataGenerator"
+		],
+		"client": [
+			"net.quin.bountyfile.bountymodclient"
+		]
+	},
+	"mixins": [
+		"bounty-mod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

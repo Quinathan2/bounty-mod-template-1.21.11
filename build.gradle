@@ -1,0 +1,38 @@
+plugins {
+	id 'fabric-loom' version "$loom_version"
+	id 'java'
+	id 'maven-publish'
+}
+
+group = "$maven_group"
+version = "$mod_version"
+
+repositories {
+	mavenCentral()
+	maven { url = 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:$minecraft_version"
+	modImplementation "net.fabricmc:fabric-loader:0.18.4"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:$fabric_api_version"
+	mappings("net.fabricmc:yarn:1.21.11+build.1:v2")
+	testImplementation 'junit:junit:4.13.2'
+}
+
+java {
+	toolchain {
+		languageVersion.set(JavaLanguageVersion.of(21))
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+}
+
+tasks.jar {
+	archiveBaseName.set("$archives_base_name")
+	from('LICENSE') {
+		rename { 'LICENSE_' + it }
+	}
+}
