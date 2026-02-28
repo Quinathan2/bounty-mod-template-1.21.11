@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "$maven_group"
-version = "$mod_version"
+version = "1.0.10"
 
 repositories {
 	mavenCentral()

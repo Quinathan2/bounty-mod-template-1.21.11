@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "net.quin.bountymod.mixin",
+	"package": "net.quin.bountyfile.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin"
